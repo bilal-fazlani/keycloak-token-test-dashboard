@@ -21,7 +21,7 @@ class Secured extends React.Component {
         if(this.state.keycloak){
             if(this.state.authenticated)
             return <div>
-                <h3>SECURED</h3>
+                <h3>Secret Information</h3>
                 <div>
                     This is a keycloak secured page
                     <br/>
