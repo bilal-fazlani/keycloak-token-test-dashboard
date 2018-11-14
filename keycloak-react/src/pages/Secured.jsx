@@ -2,6 +2,7 @@ import React from "react";
 import KeyCloak from 'keycloak-js';
 import UserInfo from "../components/UserInfo";
 import Logout from "../components/Logout";
+import Token from "../components/Token";
 
 class Secured extends React.Component {
 
@@ -14,7 +15,6 @@ class Secured extends React.Component {
         const keycloak = KeyCloak('/keycloak.json');
         const authenticated = await keycloak.init({onLoad: 'login-required'});
         this.setState({keycloak, authenticated})
-
     }
 
     render() {
@@ -30,6 +30,8 @@ class Secured extends React.Component {
                 </div>
                 <div>
                     <UserInfo keycloak={this.state.keycloak} />
+                    <br/>
+                    <Token keycloak={this.state.keycloak} />
                     <br/>
                     <Logout keycloak={this.state.keycloak} />
                 </div>
