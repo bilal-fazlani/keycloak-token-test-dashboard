@@ -20,11 +20,8 @@ class UserInfo extends React.Component {
 
     render() {
         return <div>
-            {/*<div>Name: {this.state.name}</div>*/}
-            {/*<div>Email: {this.state.email}</div>*/}
-            {/*<div>Id: {this.state.sub}</div>*/}
-
-            <ReactJson theme='monokai' src={this.state.userInfo} />
+            <h2>User info</h2>
+            <ReactJson collapsed theme='monokai' src={this.state.userInfo} />
         </div>
     }
 }

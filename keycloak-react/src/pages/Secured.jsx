@@ -19,7 +19,7 @@ class Secured extends React.Component {
 
     render() {
         if(this.state.keycloak){
-            if(this.state.authenticated)
+            if(this.state.authenticated){
             return <div>
                 <h3>Secret Information</h3>
                 <div>
@@ -36,10 +36,13 @@ class Secured extends React.Component {
                     <Logout keycloak={this.state.keycloak} />
                 </div>
             </div>;
+            }
             else
+            {
                 return <div>
                     <h3>Unable to authenticate!</h3>
                 </div>
+            }
         }
         else{
             return <div>
