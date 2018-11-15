@@ -1,8 +1,9 @@
 import React from "react";
-import {BrowserRouter, Link, Route} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import Welcome from "./Welcome";
 import Secured from "./Secured";
 import Nav from "../components/Nav";
+import '../main.css'
 
 class Master extends React.Component {
     render() {

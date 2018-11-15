@@ -24,9 +24,6 @@ class Secured extends React.Component {
                 <h3>Secret Information</h3>
                 <div>
                     This is a keycloak secured page
-                    <br/>
-                    <br/>
-                    <br/>
                 </div>
                 <div>
                     <UserInfo keycloak={this.state.keycloak} />
