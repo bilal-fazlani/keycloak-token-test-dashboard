@@ -1,5 +1,6 @@
 import React from "react";
 import ReactJson from 'react-json-view'
+import KeycloakAuthorization from "keycloak-js/dist/keycloak-authz";
 
 class Token extends React.Component {
 
@@ -14,6 +15,14 @@ class Token extends React.Component {
     async componentDidMount(){
         const tokenParsed = await this.props.keycloak.tokenParsed;
         const token = await this.props.keycloak.token;
+        const authorization = new KeycloakAuthorization(this.props.keycloak);
+
+        setTimeout(async () => {
+            const rpt = await authorization.entitlement("browser-app");
+            this.setState({
+                rpt
+            })
+            }, 1000);
 
         this.setState({
             tokenParsed,
@@ -33,6 +42,11 @@ class Token extends React.Component {
                     {this.state.token}
                 </code>
             </div>
+            {this.state.rpt?
+                <div>
+                    <h2>RPT</h2>
+                    <code>{this.state.rpt}</code>
+                </div> : null}
         </div>
     }
 }
