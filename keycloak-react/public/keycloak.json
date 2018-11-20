@@ -3,10 +3,6 @@
   "auth-server-url": "http://localhost:8080/auth",
   "ssl-required": "external",
   "resource": "browser-app",
-  "credentials": {
-    "secret": "306e1095-78f4-4995-a524-4efa1a5bcb0d"
-  },
-  "use-resource-role-mappings": true,
-  "confidential-port": 0,
-  "policy-enforcer": {}
+  "public-client": true,
+  "confidential-port": 0
 }
