@@ -1,9 +1,7 @@
 import React from "react";
 import KeyCloak from 'keycloak-js';
-import UserInfo from "../components/UserInfo";
 import Logout from "../components/Logout";
 import Token from "../components/Token";
-import RPT from "../components/RPT";
 
 class Secured extends React.Component {
 
@@ -22,18 +20,14 @@ class Secured extends React.Component {
         if(this.state.keycloak){
             if(this.state.authenticated){
             return <div>
-                <h3>Secret Information</h3>
+                <h3>
+                    <span>Secret Information</span>
+                    <Logout keycloak={this.state.keycloak} />
+                </h3>
+                <div>This is a keycloak secured page</div>
                 <div>
-                    This is a keycloak secured page
-                </div>
-                <div>
-                    <UserInfo keycloak={this.state.keycloak} />
-                    <br/>
                     <Token keycloak={this.state.keycloak} />
                     <br/>
-                    <RPT keycloak={this.state.keycloak} />
-                    <br/>
-                    <Logout keycloak={this.state.keycloak} />
                 </div>
             </div>;
             }

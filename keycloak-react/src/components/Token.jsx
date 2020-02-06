@@ -33,7 +33,7 @@ class Token extends React.Component {
                 </div>
                 <div>
                     <h2> Access token parsed</h2>
-                    <ReactJson collapsed theme='monokai' src={this.state.tokenParsed} />
+                    <ReactJson theme='google' src={this.state.tokenParsed} />
                 </div>
             </div>
             }

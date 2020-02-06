@@ -1,4 +1,4 @@
-FROM jboss/keycloak:4.6.0.Final
+FROM jboss/keycloak:4.8.0.Final
 ENV KEYCLOAK_USER bilal
 ENV KEYCLOAK_PASSWORD abcd1234
 ENV DB_VENDOR H2
